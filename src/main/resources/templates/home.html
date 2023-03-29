@@ -6,9 +6,15 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
       name="viewport">
   <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <th:block th:replace="~{fragments :: head}"></th:block>
   <title>Best of the year</title>
 </head>
 <body>
-<h1>Best of the year by <span th:text="${username}"></span></h1>
+<nav th:replace="~{fragments :: navbar('home')}"></nav>
+<div class="container text-center">
+  <h1 class="mb-5">Best of the year by <span th:text="${username}"></span></h1>
+  <img class="img-fluid" th:src="@{/img/home.jpg}">
+</div>
+
 </body>
 </html>

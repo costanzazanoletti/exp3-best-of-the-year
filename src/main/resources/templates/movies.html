@@ -6,10 +6,25 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
       name="viewport">
   <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <th:block th:replace="~{fragments :: head}"></th:block>
   <title>Best movies of the year</title>
 </head>
 <body>
-<h1>Best movies of the year</h1>
-<div th:text="${list}"></div>
+<nav th:replace="~{fragments :: navbar('movies')}"></nav>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6 text-center">
+      <h1>Best movies of the year</h1>
+
+      <ul class="list-group">
+        <li class="list-group-item" th:each="movie : ${list}">
+          <a th:href="@{|/movies/${movie.id}|}" th:text="${movie.title}"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
 </body>
 </html>

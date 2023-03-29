@@ -16,12 +16,12 @@ public class MovieController {
   @GetMapping
   public String movies(Model model) {
     List<Movie> movies = getBestMovies();
-    String movieTitles = "";
+   /* String movieTitles = "";
     for (Movie m : movies) {
       movieTitles += m.getTitle() + ", ";
     }
-    movieTitles = movieTitles.substring(0, movieTitles.length() - 2);
-    model.addAttribute("list", movieTitles);
+    movieTitles = movieTitles.substring(0, movieTitles.length() - 2);*/
+    model.addAttribute("list", movies);
     return "movies";
   }
 

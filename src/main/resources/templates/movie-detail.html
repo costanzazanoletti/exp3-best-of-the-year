@@ -6,10 +6,16 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
       name="viewport">
   <meta content="ie=edge" http-equiv="X-UA-Compatible">
+  <th:block th:replace="~{fragments :: head}"></th:block>
   <title>Movie</title>
 </head>
 <body>
+<nav th:replace="~{fragments :: navbar('movies')}"></nav>
 <h1>Movie detail</h1>
-<div th:text="${movie}"></div>
+<div th:object="${movie}">
+  <p th:text="*{title}"></p>
+  <p th:text="*{description}"></p>
+  <p th:text="*{director}"></p>
+</div>
 </body>
 </html>
